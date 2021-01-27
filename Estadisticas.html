@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/Estadisticas.css">
+    <script type="text/javascript" src="js/cambiarPestanna.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <title>Sudoku</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="inline">Estadisticas</h1>
+        
+        
+    </div>
+    <div class="estadisticas">
+        <div id="pestanas">
+            <ul id=lista>
+                <li id="pestana1"><a href='javascript:cambiarPestanna(pestanas,pestana1);'>Facil</a></li>
+                <li id="pestana2"><a href='javascript:cambiarPestanna(pestanas,pestana2);'>Medio</a></li>
+                <li id="pestana3"><a href='javascript:cambiarPestanna(pestanas,pestana3);'>Dificil</a></li>
+                <li id="pestana4"><a href='javascript:cambiarPestanna(pestanas,pestana4);'>Experto</a></li>
+            </ul>
+        </div>
+    
+        <body onload="javascript:cambiarPestanna(pestanas,pestana1);">
+    
+        <div id="contenidopestanas">
+            <div id="cpestana1">
+                Partidas
+                <div>
+                    Juegos comenzados
+                    <br>
+                    Juegos ganados
+                    <br>
+                    Indice de victorias
+                    <br>
+                    Indice de vitoria esta semana
+                </div>
+                <br><br>
+                Tiempo
+                <div>
+                    Mejor Tiempo
+                    <br>
+                    Tiempo Promedio
+                </div>
+                <br><br>
+                Puntuaciones
+                <div>
+                    Mejor Puntuaciones
+                    <br>
+                    Puntuacion promedio
+                </div>
+                <br><br>
+                Ranchas
+                <div>
+                    Racha actual de victorias
+                    <br>
+                    La mejor racha de victorias
+                    <br>
+                    Vitorias sin errores
+                </div>
+            </div>
+            <div id="cpestana2">
+                Partidas
+                <br><br>
+                Tiempo
+                <br><br>
+                Puntuaciones
+                <br><br>
+                Ranchas
+            </div>
+            <div id="cpestana3">
+                Partidas
+                <br><br>
+                Tiempo
+                <br><br>
+                Puntuaciones
+                <br><br>
+                Ranchas
+            </div>
+            <div id="cpestana4">
+                Partidas
+                <br><br>
+                Tiempo
+                <br><br>
+                Puntuaciones
+                <br><br>
+                Ranchas
+            </div>
+        </div>
+            
+
+    </div>
+    
+    
+</body>
+</html>
