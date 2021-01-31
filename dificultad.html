@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="dificultad.css">
+    <script src="dificultad.js"></script>
     <title>Sudoku</title>
 </head>
-<body>
-<div class="dificultad">
-    <h1>Elige un nivel de Dificultad</h1>
-    <img src="sudoku.png">
+<body> <nav class="main-navigation">
+    <div class="navbar-header animated fadeInUp">
+        <a class="navbar-brand"><img src="sudoku.png"></a>
+    </div>
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Dificultad()">Elegir Dificultad</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Estadisticas()">Estadisticas</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Reglas()">Reglas</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Ingreso()">Salir</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Elegir Dificultad</h1>
+    <hr class="my-5"/>
+
+    <div class="row">
+        <div class="col">
+            <button class="col big-button" onclick="NivelFacil()">Facil</button>
+        </div>
+        <div class="col">
+            <button class="col big-button" onclick="NivelMedio()">Medio</button>
+        </div>
+        <div class="col">
+            <button class="col big-button" onclick="NivelDificil()">Dificil</button>
+        </div>
+        <div class="col">
+            <button class="col big-button" onclick="NivelExtremo()">Muy Dificil</button>
+        </div>
+    </div>
 </div>
-<form method="post">
-    <button class="big-button">Facil</button>
-    <button class="big-button">Medio</button>
-    <button class="big-button">Dificil</button>
-    <button class="big-button">Extremo</button>
-</form>
 </body>
 </html>
