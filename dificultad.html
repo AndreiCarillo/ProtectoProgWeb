@@ -4,7 +4,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="dificultad.css">
+    <link id="estilos" rel="stylesheet" type="text/css" href="dificultad.css">
     <script src="dificultad.js"></script>
     <title>Sudoku</title>
 </head>
@@ -25,6 +25,17 @@
         <li class="nav-list-item">
             <a href="#" class="nav-link" onclick="Ingreso()">Salir</a>
         </li>
+        <hr width="1" size="">
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo1();">Verde</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo2();">Rojo</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo3();">Azul</a>
+        </li>
+
     </ul>
 </nav>
 
@@ -47,5 +58,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

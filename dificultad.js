@@ -8,7 +8,7 @@ function Reglas(){
     window.location.href="Reglas.html";}
 
 function Ingreso(){
-    window.location.href="Ingreso.html";}
+    window.location.href="ingreso.html";}
 
 function NivelFacil(){
     window.location.href="NivelFacil.html";}
@@ -21,3 +21,18 @@ function NivelDificil(){
 
 function NivelExtremo(){
     window.location.href="NivelExtremo.html";}
+function cambiarFondo1(){
+    if(document.getElementById('estilos').href.value="dificultad.css"){
+        document.getElementById('estilos').href = "dificultadVerde.css";
+    }
+}
+function cambiarFondo2(){
+    if(document.getElementById('estilos').href.value="dificultad.css"){
+        document.getElementById('estilos').href = 'dificultadRojo.css';
+    }
+}
+function cambiarFondo3(){
+    if(document.getElementById('estilos').href.value="dificultad.css"){
+        document.getElementById('estilos').href = 'dificultad.css';
+    }
+}

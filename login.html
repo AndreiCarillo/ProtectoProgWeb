@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="login.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <title>Sudoku</title>
+</head>
+<body><div class="container">
+    <div class="row">
+        <div class="page-header"><h2>Sudoku</h2></div>
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+
+                <legend><h3>Ingreso como usuario</h3></legend>
+                <legend><h3><img src="sudoku.png"></h3></legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-1 control-label" for="usuario"></label>
+                    <div class="col-md-12">
+                        <input id="usuario" name="usuario" type="text" placeholder="Usuario" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="form-group">
+                    <label class="col-md-1 control-label" for="Contraseña"></label>
+                    <div class="col-md-12">
+                        <input id="Contraseña" name="Contraseña" type="password" placeholder="Contrase&ntilde;a" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-1 control-label" for="login"></label>
+                    <div class="col-md-5">
+                        <button id="login" name="login" class="btn btn-block btn-success">Entrar</button>
+                    </div>
+                    <div class="col-md-5">
+                        <button type="button" id="regresar" name="regresar" class="btn  btn-success" onclick="ingreso()">Regresar</button></div>
+                </div>
+            </fieldset>
+        </form>
+    </div> <!--./row -->
+</div> <!--./container -->
+</body>
+</html>
