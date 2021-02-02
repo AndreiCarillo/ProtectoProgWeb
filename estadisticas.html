@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link id="estilos" rel="stylesheet" type="text/css" href="estadisticas.css">
+    <script src="estadisticas.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sudoku</title>
+</head>
+<body>
+<nav class="main-navigation">
+    <div class="navbar-header animated fadeInUp">
+        <a class="navbar-brand"><img src="sudoku.png"></a>
+    </div>
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Dificultad()">Elegir Dificultad</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Estadisticas()">Estadisticas</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Reglas()">Reglas</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Ingreso()">Salir</a>
+        </li>
+
+        <hr width="1" size="">
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo1();">Verde</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo2();">Rojo</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo3();">Azul</a>
+        </li>
+    </ul>
+</nav>
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="user.png"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        Nombre
+                    </h5>
+                    <h6>
+                        Apellido
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nombre</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Juanito Perez</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Correo Electronico</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>@algo</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Juegos Jugados</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Juegos Ganados</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Mejor Tiempo</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p>00:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
