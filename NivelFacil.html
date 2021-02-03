@@ -1,131 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nivel Facil</title>
-    <link rel="stylesheet" type="text/css" href="NivelFacil.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link id="estilos" rel="stylesheet" type="text/css" href="NivelFacil.css">
+    <script src="NivelFacil.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sudoku</title>
 </head>
+<body  onLoad="iniciar_juego_primera_vez(),empezarReloj();"
+      onKeyPress="tecla_pulsada(event, 'onkeypress');"
+      onKeyDown="tecla_pulsada(event, 'onkeydown');"
+>
+<nav class="main-navigation">
+    <div class="navbar-header animated fadeInUp">
+        <a class="navbar-brand"><img src="sudoku.png"></a>
+    </div>
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <a class="nav-link" onclick="Dificultad()">Elegir Dificultad</a>
+        </li>
+        <li class="nav-list-item">
+            <a class="nav-link" onclick="Estadisticas()">Estadisticas</a>
+        </li>
+        <li class="nav-list-item">
+            <a class="nav-link" onclick="Reglas()">Reglas</a>
+        </li>
+        <li class="nav-list-item">
+            <a class="nav-link" onclick="Ingreso()">Salir</a>
+        </li>
 
-<body>
-<h1><strong>Nivel Facil</strong></h1>
-<table class="container">
-    <thead>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    
-    </tbody>
-</table>
-<div class="btn">
-    <button type="button" onclick="regresarMenu">Regresar al Menú</button>
-
-    <button type="button" onclick="puntos()"> Verificar Sudoku</button>
+        <hr width="1" size="">
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo1();">Verde</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo2();">Rojo</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo3();">Azul</a>
+        </li>
+    </ul>
+</nav>
+<div>
+    <button id="btnsolucion" type="button" title="Muestra el sudoku resuelto" onclick="mostrar_solucion()" class="big-button">ver solucion.</button>
 </div>
-<div class="numeros">
-<p id="miParrafo">  Puntuación :00 </p> <p>Tiempo 00:00 </p> <p>Error 0/3</p>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
-    <p>5</p>
-    <p>6</p>
-    <p>7</p>
-    <p>8</p>
-    <p>9</p>
+<!-- Fin de Ver solucion. -->
+<!-- Intentar solucionar: -->
+<div>
+    <button type="button" title="Intenta resolver el sudoku con los numeros introducidos" onclick="validar_sudoku_usuario()" class="big-button" id="btnsolucionar">Intentar.</button>
 </div>
+<!-- Fin de Intentar solucionar. -->
+<!-- Zona de juego: -->
+<div id="zona_juego">
+    Cargando...
+</div>
+<!-- Fin de Zona de juego. -->
+<!-- Mensaje: -->
+<div id="mensaje">
+    Cargando...
+</div>
+<!-- Fin de Mensaje. -->
+<!-- Menu con numeros: -->
+<div id="div_menu_numeros">
+    <div id="opcion_1"  onMouseOver="seleccionar(1, 'activar', true);" onMouseOut="seleccionar(1, 'desactivar', false);" onClick="seleccionar(1, 'activar', false);">1</div>
+    <div id="opcion_2"  onMouseOver="seleccionar(2, 'activar', true);" onMouseOut="seleccionar(2, 'desactivar', false);" onClick="seleccionar(2, 'activar', false);">2</div>
+    <div id="opcion_3"  onMouseOver="seleccionar(3, 'activar', true);" onMouseOut="seleccionar(3, 'desactivar', false);" onClick="seleccionar(3, 'activar', false);">3</div>
+    <div id="opcion_4"  onMouseOver="seleccionar(4, 'activar', true);" onMouseOut="seleccionar(4, 'desactivar', false);" onClick="seleccionar(4, 'activar', false);">4</div>
+    <div id="opcion_5"  onMouseOver="seleccionar(5, 'activar', true);" onMouseOut="seleccionar(5, 'desactivar', false);" onClick="seleccionar(5, 'activar', false);">5</div>
+    <div id="opcion_6"  onMouseOver="seleccionar(6, 'activar', true);" onMouseOut="seleccionar(6, 'desactivar', false);" onClick="seleccionar(6, 'activar', false);">6</div>
+    <div id="opcion_7"  onMouseOver="seleccionar(7, 'activar', true);" onMouseOut="seleccionar(7, 'desactivar', false);" onClick="seleccionar(7, 'activar', false);">7</div>
+    <div id="opcion_8"  onMouseOver="seleccionar(8, 'activar', true);" onMouseOut="seleccionar(8, 'desactivar', false);" onClick="seleccionar(8, 'activar', false);">8</div>
+    <div id="opcion_9"  onMouseOver="seleccionar(9, 'activar', true);" onMouseOut="seleccionar(9, 'desactivar', false);" onClick="seleccionar(9, 'activar', false);">9</div>
+    <div id="opcion_10" onMouseOver="seleccionar(10, 'activar', true);" onMouseOut="seleccionar(10, 'desactivar', false);" onClick="seleccionar(10, 'activar', false);">X</div>
+</div>
+<!-- Fin de Menu con numeros. -->
+<!-- Formulario: -->
+<div id="div_formulario_numeros_iniciales">
+    <form id="formulario_numeros_iniciales" style="display:inline;"  onSubmit="reiniciar_juego(); return false;">
+        <label contenteditable="false" accesskey="c" style="cursor: pointer; cursor: hand;">
+            <u>C</u>antidad de n&uacute;meros iniciales: <input type="text" name="numeros_iniciales" readonly style=" font-size:10px; font-weight:bold; color:#444444; text-align:center;" id="numeros_iniciales" value="38" maxlength="2" size="2" accesskey="c">
+        </label>
+        <input type="button" value="Crear" name="boton_crear" style="font-size:11px; cursor: pointer; cursor: hand;" title="Crear un nuevo sudoku" onClick="reiniciar_juego();">
+    </form>
+</div>
+<!-- Fin de Formulario. -->
 
-
-
-<script>
-
-
-</script>
+<div id="div_cronometro">
+    <h2 id='crono'>00:00:00</h2>
+</div>
 </body>
 </html>
