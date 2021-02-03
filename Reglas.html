@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link id="estilos" rel="stylesheet" type="text/css" href="Reglas.css">
+    <script src="Reglas.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sudoku</title>
+</head>
+<body>
+<nav class="main-navigation">
+    <div class="navbar-header animated fadeInUp">
+        <a class="navbar-brand"><img src="sudoku.png" alt=""></a>
+    </div>
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Dificultad()">Elegir Dificultad</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Estadisticas()">Estadisticas</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Reglas()">Reglas</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="Ingreso()">Salir</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo1();">Verde</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo2();">Rojo</a>
+        </li>
+        <li class="nav-list-item">
+            <a href="#" class="nav-link" onclick="cambiarFondo3();">Azul</a>
+        </li>
+    </ul>
+</nav>
+<!-- Static navbar -->
+<div class="how-section1">
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <img src="5ccbbc32d8b58_thumb900.jpg" class="rounded-circle img-fluid" alt=""/>
+        </div>
+        <div class="col-md-6">
+            <h4>Reglas</h4>
+            <h4 class="subheading">Se usan los números del 1 al 9.</h4>
+            <p>
+                Sudoku se juega en una cuadrícula de 9 x 9 espacios. Dentro de las filas y columnas hay 9 "cuadrados" (compuestos de 3 x 3 espacios).
+                Cada fila, columna y cuadrado (9 espacios cada uno) debe completarse con los números del 1 al 9, sin repetir ningún número dentro de
+                la fila, columna o cuadrado. ¿Suena complicado? Como puede ver en la imagen de abajo, cada cuadrícula de Sudoku viene con algunos
+                espacios ya completados; cuantos más espacios se llenen, más fácil será el juego. Los rompecabezas Sudoku más difíciles tienen muy
+                pocos espacios ocupados. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Reglas</h4>
+            <h4 class="subheading">No repita ningún número .</h4>
+            <p>Como usted puede ver, en el cuadrado superior izquierdo (marcado con un círculo azul), este cuadrado ya tiene 7 de
+                los 9 espacios ocupados. Los únicos números que faltan en el cuadrado son 5 y 6. Al ver qué números faltan en cada cuadrado, fila o
+                columna, podemos usar el proceso de eliminación y el razonamiento deductivo para decidir qué números deben ir en cada espacio en blanco.
+                Por ejemplo, en el cuadrado superior izquierdo, sabemos que necesitamos agregar un 5 y un 6 para poder completar el cuadrado, pero con
+                base en las filas y cuadrados vecinos no podemos deducir con claridad qué número agregar en qué espacio. Esto significa que,
+                por el momento, debemos ignorar el cuadrado superior izquierdo e intentar llenar espacios en otras áreas de la cuadrícula. </p>
+        </div>
+        <div class="col-md-6 how-img">
+            <img src="sudoku.png" class="rounded-circle img-fluid" alt=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <img src="historia.png" class="rounded-circle img-fluid" alt=""/>
+        </div>
+        <div class="col-md-6">
+            <h4>Historia</h4>
+            <h4 class="subheading">La Historia del Sudoku</h4>
+            <p>
+                La historia de Sudoku se remonta a un juego de matemáticos suizos del siglo XVIII llamado "Cuadrados latinos"
+                (según este artículo de The Economist) y algunos de los primeros rompecabezas numéricos que aparecieron en los periódicos se
+                publicaron en Francia en 1895. Pero el juego moderno sudoku tal como lo reconocemos hoy fue inventado por Howard Garns,
+                un inventor de rompecabezas independiente de Connersville, Indiana, Estados Unidos en 1979, cuando se publicó en Dell Pencil
+                Puzzles y la revista Word Games. El rompecabezas se conocía como "Ubicar el Número", ya que implicaba colocar números individuales
+                en espacios vacíos en una cuadrícula de 9 x 9. .</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Contactanos.</h4>
+            <h4 class="subheading">Nuestros Datos.</h4>
+            <p> Andrei Adair Carrillo Sierra Correo Electronico: L16390560@chetumal.tecnm.mx</p>
+            <p> Pedro Luis Cobos Gomez Correo Electronico: L173903280@chetumal.tecnm.mx</p>
+            <p> Alan de Jesus Castellanos Sulub Correo Electronico: L17390319@chetumal.tecnm.mx</p>
+            <p> Josabeth Tun Hernandez Correo Electronico: L17390366@chetumal.tecnm.mx</p>
+            <p onclick="Git()">Git: Haz clic aqui</p>
+        </div>
+        <div class="col-md-6 how-img">
+            <img src="itch.png" class="rounded-circle img-fluid" alt=""/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
