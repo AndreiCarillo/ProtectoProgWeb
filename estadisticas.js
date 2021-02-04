@@ -5,22 +5,27 @@ function Estadisticas(){
     window.location.href="estadisticas.html";
 }
 function Reglas(){
-    window.location.href="Reglas.html";}
+    window.location.href="Reglas.html";
+}
 
 function Ingreso(){
-    window.location.href="Ingreso.html";}
-function cambiarFondo1(){
-    if(document.getElementById('estilos').href.value="estadisticas"){
-        document.getElementById('estilos').href = "estadisticasVerde.css";
-    }
+    window.location.href="Ingreso.html";
 }
-function cambiarFondo2(){
-    if(document.getElementById('estilos').href.value="estadisticas.css"){
-        document.getElementById('estilos').href = 'estadisticasRojo.css';
-    }
-}
-function cambiarFondo3(){
-    if(document.getElementById('estilos').href.value="estadisticas.css"){
-        document.getElementById('estilos').href = 'estadisticas.css';
-    }
+
+function CambioCSS(){
+    var select = document.getElementById("S1").value;
+    
+    switch (select) {
+        case "estilo":
+            document.getElementById('estilos').href = "estadisticas.css";
+          break;
+        case "estilo1":
+            document.getElementById('estilos').href = "estadisticasRojo.css";
+          break;
+        
+        case 'estilo2':
+            document.getElementById('estilos').href = "estadisticasVerde.css";
+          break;
+        
+      }
 }
