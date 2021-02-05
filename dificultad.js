@@ -21,18 +21,24 @@ function NivelDificil(){
 
 function NivelExtremo(){
     window.location.href="NivelExtremo.html";}
-function cambiarFondo1(){
-    if(document.getElementById('estilos').href.value="dificultad.css"){
-        document.getElementById('estilos').href = "dificultadVerde.css";
-    }
-}
-function cambiarFondo2(){
-    if(document.getElementById('estilos').href.value="dificultad.css"){
-        document.getElementById('estilos').href = 'dificultadRojo.css';
-    }
-}
-function cambiarFondo3(){
-    if(document.getElementById('estilos').href.value="dificultad.css"){
-        document.getElementById('estilos').href = 'dificultad.css';
-    }
+
+function CambioCSS(){
+    var select = document.getElementById("S1").value;
+    
+    setTimeout(function(){
+        switch (select) {
+            case "estilo":
+                document.getElementById('estilos').href = "dificultad.css";
+              break;
+            case "estilo1":
+                document.getElementById('estilos').href = "dificultadRojo.css";
+              break;
+            
+            case 'estilo2':
+                document.getElementById('estilos').href = "dificultadVerde.css";
+              break;
+            
+          }
+    },2000)
+    
 }
