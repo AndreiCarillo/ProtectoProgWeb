@@ -45,6 +45,19 @@ a.nav-link {
     color: #dbae15;
 }
 
+select{
+    display: inline-block;
+    color: #dbae15;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: mediumpurple;
+    border-radius: .3em;
+    
+}
+
 @keyframes FadeIn {
     0% {
         opacity: 0;
