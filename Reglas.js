@@ -1,18 +1,24 @@
-function cambiarFondo1(){
-    if(document.getElementById('estilos').href.value="Reglas.css"){
-        document.getElementById('estilos').href = "reglasVerde.css";
-    }
+function CambioCSS(){
+    var select = document.getElementById("S1").value;
+    
+    setTimeout(function(){
+        switch (select) {
+            case "estilo":
+                document.getElementById('estilos').href = "Reglas.css";
+              break;
+            case "estilo1":
+                document.getElementById('estilos').href = "reglasRojo.css";
+              break;
+            
+            case 'estilo2':
+                document.getElementById('estilos').href = "reglasVerde.css";
+              break;
+            
+          }
+    },2000)
+    
 }
-function cambiarFondo2(){
-    if(document.getElementById('estilos').href.value="Reglas.css"){
-        document.getElementById('estilos').href = 'reglasRojo.css';
-    }
-}
-function cambiarFondo3(){
-    if(document.getElementById('estilos').href.value="Reglas.css"){
-        document.getElementById('estilos').href = 'Reglas.css';
-    }
-}
+
 function Dificultad(){
     window.location.href="dificultad.html";}
 
