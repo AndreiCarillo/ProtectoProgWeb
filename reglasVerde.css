@@ -91,6 +91,19 @@ a.nav-link {
     animation-delay: 1.5s;
 }
 
+select{
+    display: inline-block;
+    color: darkred;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: seagreen;
+    border-radius: .3em;
+    
+}
+
 /* Animation */
 
 @keyframes fadeInUp {
