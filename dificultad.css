@@ -59,13 +59,13 @@ a.nav-link {
 
 select{
     display: inline-block;
-    color: darkgreen;
-    background-color: orangered;
+    color: #dbae15;
     text-decoration: none;
     font-size: 18px;
     font-family: sans-serif;
     font-weight: 500;
     cursor: pointer;
+    background-color: mediumpurple;
     border-radius: .3em;
     
 }
