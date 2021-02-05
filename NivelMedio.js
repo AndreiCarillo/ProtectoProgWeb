@@ -9,21 +9,29 @@ function Reglas(){
 
 function Ingreso(){
     window.location.href="Ingreso.html";}
-function cambiarFondo1(){
-    if(document.getElementById('estilos').href.value="NivelFacil.css"){
-        document.getElementById('estilos').href = "NivelFacilVerde.css";
-    }
+
+
+function CambioCSS(){
+    var select = document.getElementById("S1").value;
+    
+    setTimeout(function(){
+        switch (select) {
+            case "estilo":
+                document.getElementById('estilos').href = "NivelFacil.css";
+              break;
+            case "estilo1":
+                document.getElementById('estilos').href = "NivelFacilRojo.css";
+              break;
+            
+            case 'estilo2':
+                document.getElementById('estilos').href = "NivelFacilVerde.css";
+              break;
+            
+          }
+    },2000)
+    
 }
-function cambiarFondo2(){
-    if(document.getElementById('estilos').href.value="NivelFacil.css"){
-        document.getElementById('estilos').href = 'NivelFacilRojo.css';
-    }
-}
-function cambiarFondo3(){
-    if(document.getElementById('estilos').href.value="NivelFacil.css"){
-        document.getElementById('estilos').href = 'NivelFacil.css';
-    }
-}
+
 //Matrices:
 var celdas = new Array();
 var celdas_posibles = new Array();
