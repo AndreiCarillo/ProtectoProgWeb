@@ -472,3 +472,20 @@ opcion{
     cursor: hand;
     z-index:2;
 }
+#div_cronometro{
+    left:50%;
+    visibility: visible;
+    color:deeppink;
+    top:87%;
+    width:26px;
+    height:26px;
+    padding:0px;
+    position:absolute;
+    font-size:26px;
+    font-weight:bold;
+    line-height:26px;
+    text-align:center;
+    cursor: pointer;
+    cursor: hand;
+    z-index:2;
+}

@@ -1,0 +1,20 @@
+{
+  "Usuarios": [
+    {
+      "Nombre": "Pedro",
+      "usuario":"Pedro",
+      "contrasena":"1234",
+      "genero": "Hombre",
+      "correo": "p@gmail",
+      "telefono": 1234567890
+    },
+    {
+      "usuario":"Joss",
+      "contrasena": "5678"
+    },
+    {
+      "usuario": "Alan",
+      "contrasena": "abcd"
+    }
+  ]
+}

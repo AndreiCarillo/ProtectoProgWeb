@@ -155,7 +155,8 @@ function iniciar_juego()
     numeros_iniciales = 28
     //Se crea el sudoku:
     crear_sudoku();
-    empezarReloj()
+    detenerReloj();
+    empezarReloj();
 }
 
 

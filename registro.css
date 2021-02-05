@@ -3,7 +3,6 @@ body {
     padding: 0;
     background: -webkit-linear-gradient(left,#092756, mediumpurple);
 }
-
 .register{
     margin-top: 3%;
     padding: 3%;
@@ -13,23 +12,6 @@ body {
     color: #fff;
     margin-top: 4%;
 }
-.register-left input{
-    border: none;
-    border-radius: 1.5rem;
-    padding: 2%;
-    width: 60%;
-    background: #f8f9fa;
-    font-weight: bold;
-    color: #383d41;
-    margin-top: 30%;
-    margin-bottom: 3%;
-    cursor: pointer;
-}
-.register-right{
-    background: #f8f9fa;
-    border-top-left-radius: 10% 50%;
-    border-bottom-left-radius: 10% 50%;
-}
 .register-left img{
     margin-top: 15%;
     margin-bottom: 5%;
@@ -37,10 +19,12 @@ body {
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 1s infinite  alternate;
 }
-@-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
 }
+
 @keyframes mover {
     0% { transform: translateY(0); }
     100% { transform: translateY(-20px); }
@@ -55,7 +39,7 @@ body {
     margin-top: 10%;
 }
 .btnRegister{
-    float: right;
+    position: absolute;
     margin-top: 10%;
     border: none;
     border-radius: 1.5rem;

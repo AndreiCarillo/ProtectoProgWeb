@@ -4,47 +4,40 @@
     <script src="login.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Sudoku</title>
 </head>
 <body><div class="container">
     <div class="row">
         <div class="page-header"><h2>Sudoku</h2></div>
         <form class="form-horizontal">
-            <fieldset>
-
-                <!-- Form Name -->
-
                 <legend><h3>Ingreso como usuario</h3></legend>
-                <legend><h3><img src="sudoku.png"></h3></legend>
+                <legend><h3><img src="sudoku.png" alt=""></h3></legend>
 
-                <!-- Text input-->
+                <!-- Usuario input-->
                 <div class="form-group">
-                    <label class="col-md-1 control-label" for="usuario"></label>
                     <div class="col-md-12">
-                        <input id="usuario" name="usuario" type="text" placeholder="Usuario" class="form-control">
+                        <label for="usuario"></label><input id="usuario" name="usuario" type="text" placeholder="Usuario" class="form-control">
                     </div>
                 </div>
 
-                <!-- Password input-->
+                <!-- Contraseña input-->
                 <div class="form-group">
-                    <label class="col-md-1 control-label" for="Contraseña"></label>
                     <div class="col-md-12">
-                        <input id="Contraseña" name="Contraseña" type="password" placeholder="Contrase&ntilde;a" class="form-control">
+                        <label for="Contraseña"></label><input id="Contraseña" name="Contraseña" type="password" placeholder="Contraseña" class="form-control">
                     </div>
                 </div>
 
-                <!-- Button (Double) -->
+                <!-- Boton Doble -->
                 <div class="form-group">
-                    <label class="col-md-1 control-label" for="login"></label>
-                    <div class="col-md-5">
-                        <button id="login" name="login" class="btn btn-block btn-success">Entrar</button>
+                    <div class="col-md-6">
+                        <button type="button" id="login" name="login" class="btn btn-success" onclick="getInfo()">Entrar</button>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <button type="button" id="regresar" name="regresar" class="btn  btn-success" onclick="ingreso()">Regresar</button></div>
                 </div>
-            </fieldset>
         </form>
     </div> <!--./row -->
 </div> <!--./container -->

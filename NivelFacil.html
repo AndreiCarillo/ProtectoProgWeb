@@ -3,23 +3,22 @@
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link id="estilos" rel="stylesheet" type="text/css" href="NivelFacil.css">
     <script src="NivelFacil.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Sudoku</title>
 </head>
-<body  onLoad="iniciar_juego_primera_vez(),empezarReloj();"
-      onKeyPress="tecla_pulsada(event, 'onkeypress');"
-      onKeyDown="tecla_pulsada(event, 'onkeydown');"
+<body  onLoad="iniciar_juego_primera_vez();empezarReloj();"
+      onKeyPress="tecla_pulsada(event);"
+      onKeyDown="tecla_pulsada(event);"
 >
 <nav class="main-navigation">
     <div class="navbar-header animated fadeInUp">
-        <a class="navbar-brand"><img src="sudoku.png"></a>
+        <a class="navbar-brand"><img src="sudoku.png" alt=""></a>
     </div>
     <ul class="nav-list">
         <li class="nav-list-item">
-            <a class="nav-link" onclick="Dificultad()">Elegir Dificultad</a>
+            <a  class="nav-link" onclick="Dificultad()">Elegir Dificultad</a>
         </li>
         <li class="nav-list-item">
             <a class="nav-link" onclick="Estadisticas()">Estadisticas</a>
@@ -30,8 +29,6 @@
         <li class="nav-list-item">
             <a class="nav-link" onclick="Ingreso()">Salir</a>
         </li>
-
-        <hr width="1" size="">
         <li class="nav-list-item">
             <a href="#" class="nav-link" onclick="cambiarFondo1();">Verde</a>
         </li>
@@ -79,10 +76,10 @@
 <!-- Formulario: -->
 <div id="div_formulario_numeros_iniciales">
     <form id="formulario_numeros_iniciales" style="display:inline;"  onSubmit="reiniciar_juego(); return false;">
-        <label contenteditable="false" accesskey="c" style="cursor: pointer; cursor: hand;">
-            <u>C</u>antidad de n&uacute;meros iniciales: <input type="text" name="numeros_iniciales" readonly style=" font-size:10px; font-weight:bold; color:#444444; text-align:center;" id="numeros_iniciales" value="38" maxlength="2" size="2" accesskey="c">
+        <label contenteditable="false" accesskey="c" style="cursor: hand;">
+            <u>C</u>antidad de n&uacute;meros iniciales: <input type="text" name="numeros_iniciales" readonly style=" font-size:10px; font-weight:bold; color:#444444; text-align:center;" id="numeros_iniciales" maxlength="2" size="2" accesskey="c">
         </label>
-        <input type="button" value="Crear" name="boton_crear" style="font-size:11px; cursor: pointer; cursor: hand;" title="Crear un nuevo sudoku" onClick="reiniciar_juego();">
+        <input type="button" value="Crear" name="boton_crear" style="font-size:11px; cursor: hand;" title="Crear un nuevo sudoku" onClick="reiniciar_juego();">
     </form>
 </div>
 <!-- Fin de Formulario. -->

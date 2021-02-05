@@ -9,7 +9,7 @@ function Reglas(){
 
 function Ingreso(){
     window.location.href="Ingreso.html";}
-    function cambiarFondo1(){
+function cambiarFondo1(){
     if(document.getElementById('estilos').href.value="NivelFacil.css"){
         document.getElementById('estilos').href = "NivelFacilVerde.css";
     }
@@ -27,10 +27,10 @@ function cambiarFondo3(){
 
 
 //Matrices:
-var celdas = new Array();
-var celdas_posibles = new Array();
-var sudoku_solucion = new Array();
-var sudoku_inicial = new Array();
+var celdas = [];
+var celdas_posibles = [];
+var sudoku_solucion = [];
+var sudoku_inicial = [];
 var numeros_solucionados = 0;
 var inicio=0;
 var timeout=0;
@@ -38,7 +38,7 @@ var timeout=0;
 //Variable que contiene la opcion del menu que esta activada:
 var opcion_activada = 0;
 //Variable que guarada los numeros iniciales que se muestran al comenzar el sudoku (minimo deberian ser 17, aunque hay quien asegura que algunos basta con 16):
-var numeros_iniciales = 28;
+var numeros_iniciales = 38;
 
 //Variable que alternara mostrar/ocultar solucion:
 var ver_solucion = false;
@@ -83,7 +83,7 @@ function pintar_celda(celda, metodo, provisional)
     var contenido_celda = parseInt(document.getElementById(celda).innerHTML);
     var color_celda = document.getElementById(celda).style.color;
     //Si se retira el cursor del raton y no esta activada, se desactiva:
-    if (metodo == "desactivar" && isNaN(contenido_celda) || metodo == "desactivar" && color_celda != "rgb(170, 0, 0)" && color_celda != "rgb(170,0,0)" && color_celda != "#aa0000" && color_celda != "#AA0000" && color_celda != "#dd7080" && color_celda != "#DD7080" && color_celda != "rgb(221, 112, 128)" && color_celda != "rgb(221,112,128)")
+    if (metodo === "desactivar" && isNaN(contenido_celda) || metodo === "desactivar" && color_celda !== "rgb(170, 0, 0)" && color_celda !== "rgb(170,0,0)" && color_celda !== "#aa0000" && color_celda !== "#AA0000" && color_celda !== "#dd7080" && color_celda !== "#DD7080" && color_celda != "rgb(221, 112, 128)" && color_celda != "rgb(221,112,128)")
     {
         //Se deja de pintar el numero seleccionado en la celda si se pulsa una tecla:
         document.onkeydown = function() { }
@@ -95,7 +95,7 @@ function pintar_celda(celda, metodo, provisional)
     else if (metodo == "activar" && provisional && color_celda != "rgb(170, 0, 0)" && color_celda != "rgb(170,0,0)" && color_celda != "#aa0000" && color_celda != "#AA0000" && color_celda != "#dd7080" && color_celda != "#DD7080" && color_celda != "rgb(221, 112, 128)" && color_celda != "rgb(221,112,128)")
     {
         //Si se pulsa una tecla, se cambia a la opcion activada:
-        document.onkeydown = function(event) { if (window.Event) { tecla_pulsada(event, 'onkeypress'); } if (opcion_activada == 10) { document.getElementById(celda).innerHTML = "&nbsp;"; } else if (opcion_activada != 0) { document.getElementById(celda).innerHTML = opcion_activada; } }
+        document.onkeydown = function(event) { if (window.Event) { tecla_pulsada(event); } if (opcion_activada == 10) { document.getElementById(celda).innerHTML = "&nbsp;"; } else if (opcion_activada != 0) { document.getElementById(celda).innerHTML = opcion_activada; } }
         //Si no hay ninguna opcion activada, sale de la funcion:
         if (opcion_activada == 0) { return; }
         //Si la opcion es la 10 (borrar numero), se borra el contenido de la celda provisionalmente:
@@ -156,9 +156,10 @@ function seleccionar(opcion, metodo, provisional)
 function iniciar_juego()
 {
     //Se setean los numeros iniciales:
-    numeros_iniciales = 28;
+    numeros_iniciales = 38;
     //Se crea el sudoku:
     crear_sudoku();
+    detenerReloj()
     empezarReloj();
 }
 
@@ -194,10 +195,10 @@ function crear_sudoku()
     //Si no se ha podido solucionar, se vuelve a llamar a la funcion:
     if (!sudoku_solucionado) { crear_sudoku(); return; }
     //...pero si se ha solucionado, se guarda el sudoku solucionado en sudoku_solucion, se pone en la matriz celdas los numeros iniciales y luego se continua:
-    else { sudoku_solucion = new Array(); for (j=1; j<=81; j++) { sudoku_solucion[j] = celdas[j]; celdas[j] = 0; } }
+    else { sudoku_solucion = []; for (j=1; j<=81; j++) { sudoku_solucion[j] = celdas[j]; celdas[j] = 0; } }
 
     //Variables que contendran el numero de region, casilla y numero aleatorios:
-    var casillas_libres = new Array();
+    var casillas_libres = [];
     var casilla_aleatoria_posicion = 0;
     var casilla_aleatoria = 0;
     //Se ponen los numeros en el sudoku:
@@ -209,19 +210,14 @@ function crear_sudoku()
         casilla_aleatoria = casillas_libres[casilla_aleatoria_posicion];
 
         //Si la casilla esta vacia, se calcula si el sudoku es valido y si es asi se introduce:
-        if (celdas[casilla_aleatoria] == 0 && sudoku_solucion[casilla_aleatoria] != 0)
+        if (celdas[casilla_aleatoria] === 0 && sudoku_solucion[casilla_aleatoria] !== 0)
         {
             //Se introduce en la casilla el numero:
             celdas[casilla_aleatoria] = sudoku_solucion[casilla_aleatoria];
 
-            //Se comprueba si el sudoku es valido:
-//                            sudoku_valido = validar_sudoku(true);
-
-            //Si el sudoku no es valido, se borra la casilla introducida y se vuelve a hacer el bucle sin contar este loop:
-//                            if (!sudoku_valido) { celdas[casilla_aleatoria] = 0; x--; continue; }
         }
         //...y si no, se vuelve a hacer el bucle sin contar este loop:
-        else { x--; continue; }
+        else { x--;  }
     }
 
     //Se valida el sudoku:
@@ -248,10 +244,10 @@ function crear_sudoku()
 function vaciar_sudoku()
 {
     //Se borran las matrices:
-    celdas = new Array();
-    celdas_posibles = new Array();
-    sudoku_solucion = new Array();
-    sudoku_inicial = new Array();
+    celdas = [];
+    celdas_posibles = [];
+    sudoku_solucion = [];
+    sudoku_inicial = [];
     numeros_solucionados = 0;
     for (x=1; x<=81; x++)
     {
@@ -276,7 +272,6 @@ function dibujar_sudoku()
 
     var numero_columna = 0;
     var numero_fila = 0;
-    var numero_region = 1;
     var posicion_left = 0;
     var posicion_top = 0;
     var espaciado_vertical = 0;
@@ -296,7 +291,7 @@ function dibujar_sudoku()
         posicion_top = (numero_fila * 50) + 2 + espaciado_vertical;
 
         //Se guarda el div como codigo HTML para insertarlo posteriormente:
-        codigo_html += '<div id="'+x+'" style="visibility:visible; background:'+color_fondo+'; color:#333333; left:'+posicion_left+'px; top:'+posicion_top+'px; width:50px; height:50px; padding:0px; position:absolute; font-size:24px; line-height:52px; text-align:center; cursor: pointer; cursor: hand; z-index:3;" onMouseOver="javascript:pintar_celda('+x+', \'activar\', true);" onMouseOut="javascript:pintar_celda('+x+', \'desactivar\', true);" onClick="javascript:pintar_celda('+x+', \'activar\', false);">' + x + '</div>';
+        codigo_html += '<div id="'+x+'" style="visibility:visible; background:'+color_fondo+'; color:#333333; left:'+posicion_left+'px; top:'+posicion_top+'px; width:50px; height:50px; padding:0; position:absolute; font-size:24px; line-height:52px; text-align:center; cursor: hand; z-index:3;" onMouseOver="pintar_celda('+x+', \'activar\', true);" onMouseOut="pintar_celda('+x+', \'desactivar\', true);" onClick="pintar_celda('+x+', \'activar\', false);">' + x + '</div>';
 
         numero_columna++;
         if (numero_columna > 8) { numero_columna = 0; numero_fila++; }
@@ -402,8 +397,8 @@ function validar_celda(celda)
 
 
     //Calculamos que no se repita nada en la region de la celda:
-    var numeros_usados = new Array();
-    var n = 1;
+    var numeros_usados = [];
+    var n;
     for (n=1; n<=9; n++) { numeros_usados[n] = false; }
     var contador = 1;
     for (n=num_inicial_region; n<=num_inicial_region+20; n++)
@@ -438,7 +433,7 @@ function validar_celda(celda)
 //Funcion que calcula que casillas estan libres y las devuelve en una matriz:
 function calcular_casillas_libres()
 {
-    var casillas_libres = new Array();
+    var casillas_libres = [];
     var b = 0;
     for (a=1; a<=81; a++) { if (celdas[a] == 0) { casillas_libres[b] = a; b++; } }
     return casillas_libres;
@@ -458,17 +453,15 @@ function solucionar_sudoku(celda)
     {
         sudoku_solucionado = solucionar_sudoku(celda+1);
         //Si se ha solucionado el sudoku, se retorna true:
-        if (sudoku_solucionado) { return true; }
-        //...pero si no, se retorna false:
-        else { return false; }
+        return sudoku_solucionado;
     }
 
     //Se crea una matriz con el numero del 1 al 8, y luego se baraja:
-    var numeros_barajados = new Array();
+    var numeros_barajados;
     numeros_barajados = barajar(); //Se baraja.
 
     var es_valido = false;
-    var e = 0;
+    var e;
     //Se realiza un bucle para probar numeros en la casilla:
     for (e=0; e<=8; e++)
     {
@@ -503,7 +496,7 @@ function solucionar_sudoku(celda)
 //Funcion que baraja una matriz:
 function barajar()
 {
-    var numeros_barajados = new Array();
+    var numeros_barajados = [];
     for (f=0; f<=8; f++)
     {
         //Creamos un numero aleatorio:
@@ -516,7 +509,7 @@ function barajar()
             if (numeros_barajados[g] == numero_aleatorio) { se_encuentra = true; break; }
         }
         //Si se ha encontrado, se repite el bucle sin contar el loop:
-        if (se_encuentra) { f--; continue; }
+        if (se_encuentra) { f--;  }
         //...pero si no, se introduce en la nueva matriz barajada:
         else { numeros_barajados[f] = numero_aleatorio; }
     }
@@ -529,7 +522,7 @@ function barajar()
 function mostrar_solucion()
 {
     //Se alterna para que funcione como un boton de on/off (mostrar/ocultar solucion), alternando a la opcion contraria:
-    ver_solucion = (ver_solucion) ? false : true;
+    ver_solucion = (!ver_solucion);
 
     //Si se ha elegido mostrar la solucion, se muestra:
     if (ver_solucion)
@@ -634,7 +627,7 @@ function LeadingZero(Time) {
 
 
 //Funcion que ocurre al pulsar una tecla:
-function tecla_pulsada(e, evento_actual)
+function tecla_pulsada(e)
 {
     //Capturamos la tacla pulsada, segun navegador:
     if (e.keyCode) { var unicode = e.keyCode; }
@@ -654,5 +647,3 @@ function tecla_pulsada(e, evento_actual)
     else if (unicode == 105 || unicode == 57 || unicode == 33) { opcion_activada = 9; seleccionar(opcion_activada, "activar", false); } //Tecla 9.
     else if (unicode == 45 || unicode == 96 || unicode == 48) { opcion_activada = 10; seleccionar(opcion_activada, "activar", false); } //Tecla 0.
 }
-
-// -->

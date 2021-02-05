@@ -102,47 +102,6 @@ a.nav-link {
 .nav-list li:nth-child(5) {
     animation-delay: 1.5s;
 }
-
-/* Animation */
-
-@keyframes fadeInUp {
-    from {
-        transform: translate3d(0, 40px, 0)
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-        opacity: 1
-    }
-}
-
-@-webkit-keyframes fadeInUp {
-    from {
-        transform: translate3d(0, 40px, 0)
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-        opacity: 1
-    }
-}
-
-.animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-fill-mode: both
-}
-
-.animatedFadeInUp {
-    opacity: 0
-}
-
-.fadeInUp {
-    opacity: 0;
-    animation-name: fadeInUp;
-    -webkit-animation-name: fadeInUp;
-}
 h1{
     color: #dbae15;
 }
@@ -209,17 +168,3 @@ button.big-button:active::before {
 
 }
 
-buttonColores{
-    position: absolute;
-    right: 0;
-    margin-left: auto;
-    padding: 20px 25px;
-    background-color: rgb(228, 219, 212);
-    font-size: 16px;
-    text-align: center;
-    border: 3px solid;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 4px;
-    outline: antiquewhite;
-}
