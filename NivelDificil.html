@@ -31,15 +31,12 @@
             <a class="nav-link" onclick="Ingreso()">Salir</a>
             localStore.setItem('Si', Json.stringify(Salir));
         </li>
-        <hr width="1" size="">
         <li class="nav-list-item">
-            <a href="#" class="nav-link" onclick="cambiarFondo1();">Verde</a>
-        </li>
-        <li class="nav-list-item">
-            <a href="#" class="nav-link" onclick="cambiarFondo2();">Rojo</a>
-        </li>
-        <li class="nav-list-item">
-            <a href="#" class="nav-link" onclick="cambiarFondo3();">Azul</a>
+            <select id="S1" name="select" onchange="CambioCSS();">
+                <option value="estilo" selected>Default(Azul)</option>
+                <option value="estilo1" >Rojo</option>
+                <option value="estilo2">Verde</option>
+            </select>
         </li>
     </ul>
 </nav>
