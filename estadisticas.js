@@ -13,7 +13,7 @@ function Ingreso(){
 }
 
 function CargarD(){
-    var datos='{"nombre":"Juan","apellido":"Perez","correo":"juan@gmail.com","juegosj":"17","juegosg":"8","tiempo":"2:53"}';
+    var datos='{"nombre":"Pedro","apellido":"Cobos","correo":"p@gmail.com","juegosj":"17","juegosg":"8","tiempo":"2:53"}';
     setTimeout(function(){
         var ToJson=JSON.parse(datos);
         document.getElementById('1').innerHTML=ToJson.nombre;
