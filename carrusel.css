@@ -189,3 +189,12 @@ button.big-button:active::before {
 
 }
 
+#div_reloj{
+    width: 15%;
+}
+
+#centrar{
+    text-align: center;
+}
+
+

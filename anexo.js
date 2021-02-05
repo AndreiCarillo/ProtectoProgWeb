@@ -28,25 +28,25 @@ function NivelDificil() {
 function NivelExtremo() {
     window.location.href = "NivelExtremo.html";
 }
-function CambioCSS(){
+function CambioCSS() {
     var select = document.getElementById("S1").value;
-    
-    setTimeout(function(){
+
+    setTimeout(function () {
         switch (select) {
             case "estilo":
                 document.getElementById('estilos').href = "carrusel.css";
-              break;
+                break;
             case "estilo1":
                 document.getElementById('estilos').href = "carruselrojo.css";
-              break;
-            
+                break;
+
             case 'estilo2':
                 document.getElementById('estilos').href = "carruselverde.css";
-              break;
-            
-          }
-    },2000)
-    
+                break;
+
+        }
+    }, 2000)
+
 }
 
 class enlace {
@@ -64,8 +64,6 @@ window.onload = function () {
 
     var pre = "<a href= '";
     var post = "'>JUGAR</p>";
-
-
     let enlaces = ["https://www.chess.com/es/play/computer", "https://papergames.io/es/tres-en-raya", "http://loteriamexicana.cholla.com.mx/", "https://www.pinturillo2.com/", "http://slither.io/"];
 
     let link1 = new enlace(pre, enlaces[0].toString(), post);
@@ -85,8 +83,26 @@ window.onload = function () {
     document.getElementById("p3").innerHTML += e3.toString();
     document.getElementById("p4").innerHTML += e4.toString();
     document.getElementById("p5").innerHTML += e5.toString();
+
+    iniciarReloj();
+}
+
+function iniciarReloj() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = ceros(m);
+    s = ceros(s);
+    document.getElementById('reloj').innerHTML = h + ":" + m + ":" + s;
+    //Timeout cada 1 segundo se ejecuta
+    var t = setTimeout(iniciarReloj, 1000);
+}
+// Añade un cero a números menores a 10
+function ceros(i) {
+    if (i < 10) { i = "0" + i };
+    return i;
 }
 
 
-
-//LISTO PERRA ASI SE USA UNA CLASE
+//PIENSA CHOTO
