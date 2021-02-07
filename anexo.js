@@ -1,33 +1,34 @@
-function Dificultad() {
-    window.location.href = "dificultad.html";
-}
+// function Dificultad() {
+//     window.location.href = "dificultad.html";
+// }
 
-function Estadisticas() {
-    window.location.href = "estadisticas.html";
-}
-function Reglas() {
-    window.location.href = "Reglas.html";
-}
+// function Estadisticas() {
+//     window.location.href = "estadisticas.html";
+// }
+// function Reglas() {
+//     window.location.href = "Reglas.html";
+// }
 
 function Ingreso() {
-    window.location.href = "ingreso.html";
+    window.location.href = "Ingreso.html";
+    //console.log("a");
 }
 
-function NivelFacil() {
-    window.location.href = "NivelFacil.html";
-}
+// function NivelFacil() {
+//     window.location.href = "NivelFacil.html";
+// }
 
-function NivelMedio() {
-    window.location.href = "NivelMedio.html";
-}
+// function NivelMedio() {
+//     window.location.href = "NivelMedio.html";
+// }
 
-function NivelDificil() {
-    window.location.href = "NivelDificil.html";
-}
+// function NivelDificil() {
+//     window.location.href = "NivelDificil.html";
+// }
 
-function NivelExtremo() {
-    window.location.href = "NivelExtremo.html";
-}
+// function NivelExtremo() {
+//     window.location.href = "NivelExtremo.html";
+// }
 function CambioCSS() {
     var select = document.getElementById("S1").value;
 
@@ -45,9 +46,12 @@ function CambioCSS() {
                 break;
 
         }
-    }, 2000)
+    }, 2000);
 
 }
+
+//Creacion de la clase para generar los enlaces
+
 
 class enlace {
     constructor(pre, e, post) {
@@ -55,34 +59,37 @@ class enlace {
         this.e = e;
         this.post = post;
     }
-    build() {
+    //Concatenando la etiqueta con el enlace
+    construir() {
         return this.pre + this.e + this.post;
     }
 }
 
-window.onload = function () {
+window.onload = function () {    
 
     var pre = "<a href= '";
     var post = "'>JUGAR</p>";
-    let enlaces = ["https://www.chess.com/es/play/computer", "https://papergames.io/es/tres-en-raya", "http://loteriamexicana.cholla.com.mx/", "https://www.pinturillo2.com/", "http://slither.io/"];
+    var enlaces = ["https://www.chess.com/es/play/computer", "https://papergames.io/es/tres-en-raya", "http://loteriamexicana.cholla.com.mx/", "https://www.pinturillo2.com/", "http://slither.io/"];
 
-    let link1 = new enlace(pre, enlaces[0].toString(), post);
-    let link2 = new enlace(pre, enlaces[1].toString(), post);
-    let link3 = new enlace(pre, enlaces[2].toString(), post);
-    let link4 = new enlace(pre, enlaces[3].toString(), post);
-    let link5 = new enlace(pre, enlaces[4].toString(), post);
+    //Creqacion de objetos de la clase enclace
+    var link1 = new enlace(pre, enlaces[0].toString(), post);
+    var link2 = new enlace(pre, enlaces[1].toString(), post);
+    var link3 = new enlace(pre, enlaces[2].toString(), post);
+    var link4 = new enlace(pre, enlaces[3].toString(), post);
+    var link5 = new enlace(pre, enlaces[4].toString(), post);
 
-    var e1 = link1.build();
-    var e2 = link2.build();
-    var e3 = link3.build();
-    var e4 = link4.build();
-    var e5 = link5.build();
+    var e1 = link1.construir();
+    var e2 = link2.construir();
+    var e3 = link3.construir();
+    var e4 = link4.construir();
+    var e5 = link5.construir();
 
     document.getElementById("p1").innerHTML += e1.toString();
     document.getElementById("p2").innerHTML += e2.toString();
     document.getElementById("p3").innerHTML += e3.toString();
     document.getElementById("p4").innerHTML += e4.toString();
     document.getElementById("p5").innerHTML += e5.toString();
+    
 
     iniciarReloj();
 }
@@ -105,4 +112,4 @@ function ceros(i) {
 }
 
 
-//PIENSA CHOTO
+
