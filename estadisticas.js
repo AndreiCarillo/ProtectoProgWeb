@@ -93,15 +93,22 @@ function Obtain(){
 }
 
 function Create(obj){
-    var users2 = [],
-    dataInLocalStorage = localStorage.getItem(localStorageKeyName);
+    if(localStorage.getItem('data2')==null){
+        var users2 = [],
+        dataInLocalStorage = localStorage.getItem(localStorageKeyName);
     
-    if (dataInLocalStorage !== null) {
-        users2 = JSON.parse(dataInLocalStorage);
+        if (dataInLocalStorage !== null) {
+            users2 = JSON.parse(dataInLocalStorage);
+        }
+
+        users2.push(obj);
+        localStorage.setItem(localStorageKeyName, JSON.stringify(users2));
+        loadFromLocalStorage();
     }
-
-    users2.push(obj);
-
-    localStorage.setItem(localStorageKeyName, JSON.stringify(users2));
-    loadFromLocalStorage();
+    else{
+        
+        
+        loadFromLocalStorage();
+    }
+    
 }
